@@ -1,0 +1,10 @@
+docker pull caddy
+sudo usermod -aG docker ${USER}
+sudo usermod -aG docker ${olm100374}
+docker image build . -t caddy2:2.5.1-alpine 
+docker container run             \                                                                                                                                                                   ─╯
+    --name my-caddy-server2         \
+    -p 8080:80                     \
+    -d caddy2:2.5.1-alpine
+docker container stop my-caddy-server2 
+docker container rm my-caddy-server2
