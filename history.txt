@@ -8,3 +8,10 @@ docker container run             \                                              
     -d caddy2:2.5.1-alpine
 docker container stop my-caddy-server2 
 docker container rm my-caddy-server2
+docker container run             \                                                                                                                                                                   ─╯
+    --name my-caddy-server2         \
+    -p 8080:80                     \
+    -v ${PWD}/pages:/usr/src/pages  \
+    -d caddy2:2.5.1-alpine
+docker container stop my-caddy-server2 
+docker container rm my-caddy-server2
